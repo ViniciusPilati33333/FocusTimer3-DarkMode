@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  --screen-bg-url: url(./imagesControls/iconSun.svg);
+  --ff-timer: "Roboto", sans-serif;
+  --bg-color: #e5e5e5;
+  --color-time: #000000;
+  --bg-btn: #e1e1e6;
+  --bg-btn-rain: #02799d;
+  --color-btns-controls: #000000;
+  --color-btns-sounds: #020202;
+  --music-cards-color: rgb(190, 190, 192);
+  --color-volume-control: rgb(0, 0, 0);
+}
+
+body {
+  background: var(--bg-color);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hide {
+  display: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-right: 19.2rem;
+}
+
+.timer {
+  padding-bottom: 4.8rem;
+}
+
+.timer span {
+  font-family: var(--ff-timer);
+  color: var(--color-time);
+  font-size: 12rem;
+  line-height: 14.8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.controls button {
+  margin: 2rem;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  /* background-color: var(--bg-btn); */
+}
+/* botoes de som */
+
+.sounds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+
+.sounds button {
+  cursor: pointer;
+}
+
+.sound-forest svg path:hover,
+.sound-coffeShop svg path:hover,
+.sound-fireplace svg path:hover {
+  fill: #98989a;
+  transition: 400ms linear;
+  transform: scale(1);
+}
+
+.sound-rain svg path:hover {
+  fill: #0a6884;
+  transition: 400ms linear;
+  transform: scale(1);
+}
+
+.sounds input {
+  display: flex;
+  width: 11rem;
+}
+
+/* ajustando a barra de som */
+.change-color-sound-controler input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: white;
+}
+
+.change-color-sound-controler input {
+  background-color: white;
+}
+
+input {
+  appearance: none;
+  height: 0.4rem;
+  width: 9rem;
+  border-radius: 0.5rem;
+  background-color: var(--color-volume-control);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+
+  height: 1.6rem;
+  width: 1.6rem;
+  border-radius: 100%;
+  background: var(--color-volume-control);
+  cursor: pointer;
+}
+
+/* Dark Mode */
+
+.screen2 {
+  --screen-bg-url: url(./imagesControls/iconMoon.svg);
+  --bg-color: #121214;
+  --color-time: #ffffff;
+  --bg-btn: #29292e;
+  --bg-btn-rain: #0a3442;
+  --color-btns-controls: #c4c4cc;
+  --color-btns-sounds: #ffffff;
+  --music-cards-color: hsla(240, 6%, 17%, 1);
+  --controls-color: hsla(240, 6%, 21%, 1);
+  --color-volume-control: rgb(254, 254, 254);
+}
+
+#switch-mode {
+  width: 0;
+}
+
+#switch-mode button {
+  width: 4.4rem;
+  height: 4.4rem;
+  background: transparent var(--screen-bg-url) no-repeat center;
+  position: absolute;
+  right: 2rem;
+  top: 3rem;
+  cursor: pointer;
+}
+
+.play,
+.pause,
+.restart,
+.sumFive,
+.decreaseFive,
+.sound-forest,
+.sound-rain,
+.sound-coffeShop,
+.sound-fireplace {
+  background-color: transparent;
+}
+
+.play svg path,
+.pause svg path,
+.restart svg path,
+.sumFive svg path,
+.decreaseFive svg path {
+  fill: var(--color-btns-controls);
+}
+
+
+.forest-sound,
+.rain-sound,
+.coffeeshop-sound,
+.fireside-sound {
+  width: 13rem;
+  height: 15rem;
+  border-radius: 2.4rem;
+  background-color: var(--music-cards-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.6rem;
+  padding-top: 3rem;
+}
+
+.rain-sound svg path,
+.forest-sound svg path,
+.fireside-sound svg path,
+.coffeeshop-sound svg path {
+  fill: var(--color-btns-sounds);
+}
+
+/* responsive */
+
+@media screen and (max-width: 982px) {
+  .container {
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .controls button {
+    margin: 1rem;
+  }
+
+  .timer span {
+    font-size: 10rem;
+    line-height: 8rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .timer {
+    padding-bottom: 1rem;
+  }
+
+  .controls button {
+    margin-bottom: 5rem;
+  }
+}
+
