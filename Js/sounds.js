@@ -1,16 +1,9 @@
-import {
+  import {
   soundForestVolume,
   soundRainVolume,
   soundCoffeShopVolume,
   soundFireplaceVolume,
 } from "./elements.js"
-
-export function volumeControl () {
-  forestAudio.volume = soundForestVolume.value
-  rainAudio.volume = soundRainVolume.value
-  soundCoffeShop.volume = soundCoffeShopVolume.value
-  soundFireplace.volume = soundFireplaceVolume.value
-}
 
 export function Sound() {
   const buttonPressAudio = new Audio(
@@ -23,6 +16,12 @@ export function Sound() {
   const rainAudio = new Audio("./sounds/Som-Chuva.wav")
   const soundCoffeShop = new Audio("./sounds/Som-Cafeteria.wav")
   const soundFireplace = new Audio("./sounds/Som-Lareira.wav")
+
+  function volumeControl() {
+      inputValeuSound = soundForestVolume.value
+      Sound.soundForest.volume = inputValeuSound
+
+  }
 
   function pressButton() {
     buttonPressAudio.play()
@@ -76,6 +75,5 @@ export function Sound() {
     playSoundCoffeShop,
     playSoundFireplace,
     toggleAudio,
-    volumeControl
   }
 }
