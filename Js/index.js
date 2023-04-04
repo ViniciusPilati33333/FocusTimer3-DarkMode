@@ -19,15 +19,6 @@ import {
   soundFireplaceVolume,
 } from "./elements.js"
 
- // ajustando o volume com o input 👇
-
-export default function() {
-  soundForestVolume.addEventListener('input', sound.volumeControl)
-  soundRainVolume.addEventListener('input', sound.volumeControl)
-  soundCoffeShopVolume.addEventListener('input', sound.volumeControl)
-  soundFireplaceVolume.addEventListener('input', sound.volumeControl)
-}
-
 const timer = Timer({
   minutesDisplay,
   secondsDisplay,
@@ -60,7 +51,6 @@ buttonAddFiveMinutes.addEventListener('click', function(){
   sound.pressButton();
 });
 
-
 buttonRemoveFiveMinutes.addEventListener('click', function(){
   timer.BtnRemoveFiveMinutes();
   sound.pressButton();
@@ -82,6 +72,14 @@ soundCoffeShop.addEventListener("click", function() {
 soundFireplace.addEventListener("click", function() {
   sound.playSoundFireplace();
 });
+
+ // ajustando o volume com o input 👇
+  soundForestVolume.addEventListener("input", sound.volumeForestSlider)
+  soundRainVolume.addEventListener("input", sound.volumeRainSlider)
+  soundCoffeShopVolume.addEventListener("change", sound.volumeCoffeShopSlider)
+  soundFireplaceVolume.addEventListener("change", sound.volumeFireplaceSlider)
+
+
 
 
 
