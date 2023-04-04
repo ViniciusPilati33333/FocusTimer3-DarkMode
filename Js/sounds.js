@@ -17,10 +17,24 @@ export function Sound() {
   const soundCoffeShop = new Audio("./sounds/Som-Cafeteria.wav")
   const soundFireplace = new Audio("./sounds/Som-Lareira.wav")
 
-  function volumeControl() {
-      inputValeuSound = soundForestVolume.value
-      Sound.soundForest.volume = inputValeuSound
+  function volumeForestSlider() {
+      const inputValeuSound = soundForestVolume.value
+      forestAudio.volume = inputValeuSound / 100
+  }
 
+  function volumeRainSlider() {
+     const inputValeuSound = soundRainVolume.value
+     rainAudio.volume = inputValeuSound / 100
+  }
+
+  function volumeCoffeShopSlider() {
+    const inputValeuSound = soundCoffeShopVolume.value
+    soundCoffeShop.volume = inputValeuSound / 100
+  }
+
+  function volumeFireplaceSlider() {
+      const inputValeuSound = soundFireplaceVolume.value
+      soundFireplace.volume = inputValeuSound / 100
   }
 
   function pressButton() {
@@ -75,5 +89,9 @@ export function Sound() {
     playSoundCoffeShop,
     playSoundFireplace,
     toggleAudio,
+    volumeForestSlider,
+    volumeRainSlider,
+    volumeCoffeShopSlider,
+    volumeFireplaceSlider
   }
 }
